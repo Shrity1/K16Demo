@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Add Orders" max_length="40" name="x_snc_order_tracki_add_orders" type="collection">
+        <element label="Complete date" max_length="40" name="complete_date" type="glide_date"/>
+        <element label="ID" mandatory="true" max_length="40" name="id" primary="true" type="integer"/>
+        <element label="Product Name" mandatory="true" max_length="200" name="product_name" type="string"/>
+        <element label="Start Date" max_length="40" name="start_date" type="glide_date"/>
+        <element choice="1" default="Processing" label="Status" max_length="20" name="status" type="string">
+            <choice>
+                <element label="Processing" sequence="0" value="Processing"/>
+                <element label="In Transit" sequence="1" value="In_Transit"/>
+                <element label="Delivered" sequence="2" value="Delivered"/>
+                <element label="Return Initiated" sequence="3" value="Return_Initiated"/>
+                <element label="Return Complete" sequence="4" value="Return_Complete"/>
+            </choice>
+        </element>
+    </element>
+</database>
