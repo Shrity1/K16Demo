@@ -2,7 +2,7 @@
 <database>
     <element label="Return" max_length="40" name="x_snc_order_tracki_return" type="collection">
         <element label="Complete Date" max_length="40" name="complete_date" type="glide_date"/>
-        <element label="ORDER ID" max_length="40" name="order_id" type="integer"/>
+        <element label="ORDER ID" max_length="40" name="order_id" reference="x_snc_order_tracki_add_orders" type="integer"/>
         <element label="Start date" max_length="40" name="start_date" type="glide_date"/>
     </element>
 </database>
