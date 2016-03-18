@@ -31,16 +31,37 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here
-	var target = new GlideRecord('x_snc_order_tracki_add_product');
-	target.addQuery('product_name', current.product_name.getDisplayValue());
-	target.query();
-	if (target.getRowCount() == 0)
+	
+	var product = new GlideRecord('x_snc_order_tracki_add_product');
+	var order = new GlideRecord('x_snc_order_tracki_add_orders');
+	var MaxId = new GlideAggregate('x_snc_order_tracki_add_orders');
+
+	product.addQuery('name', current.product_name.getDisplayValue());
+	
+	product.query();
+   
+	
+	if (product.getRowCount() == 0)
 		{ 
 			gs.addInfoMessage('No such product exists');
 			current.setAbortAction(true);
 		 
 		}
-		
+	else
+		{
+			
+	        order.orderBy('ID');
+	        order.query();
+			MaxId.addAggregate('MAX', 'id');
+			MaxId.query();
+			
+	        if (MaxId.next())
+	         	current.id.setValue(1);
+	        else 
+	            current.id.setValue(MaxId.getAggregate('MAX') + 1);
+			current.return_status.setValue('No return');
+			current.total_price.setValue(product.getElement(price) * current.quantity.getSessionValue());
+		}
 	
 
 })(current, previous);]]></script>
@@ -51,7 +72,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c3897ac013921200c7145aef3244b0cb</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>INSONORDER</sys_name>
         <sys_overrides/>
         <sys_package display_value="Order Tracking System" source="x_snc_order_tracki">f0337cbb1382120013cebf173244b052</sys_package>
@@ -60,7 +81,7 @@
         <sys_scope display_value="Order Tracking System">f0337cbb1382120013cebf173244b052</sys_scope>
         <sys_update_name>sys_script_c3897ac013921200c7145aef3244b0cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-03-16 23:59:29</sys_updated_on>
+        <sys_updated_on>2016-03-18 15:38:36</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

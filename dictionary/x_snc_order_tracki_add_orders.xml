@@ -2,8 +2,10 @@
 <database>
     <element label="Add Orders" max_length="40" name="x_snc_order_tracki_add_orders" type="collection">
         <element label="Complete date" max_length="40" name="complete_date" type="glide_date"/>
-        <element label="ID" mandatory="true" max_length="40" name="id" primary="true" type="integer"/>
+        <element label="ID" max_length="40" name="id" primary="true" read_only="true" type="integer"/>
         <element label="Product Name" mandatory="true" max_length="200" name="product_name" reference="x_snc_order_tracki_add_product" table_reference="true" type="string"/>
+        <element label="Quantity" mandatory="true" max_length="40" name="quantity" type="integer"/>
+        <element label="Return Status" max_length="20" name="return_status" reference="x_snc_order_tracki_return" type="string"/>
         <element label="Start Date" max_length="40" name="start_date" type="glide_date"/>
         <element choice="1" default="Processing" label="Status" max_length="20" name="status" type="string">
             <choice>
@@ -14,5 +16,6 @@
                 <element label="Return Complete" sequence="4" value="Return_Complete"/>
             </choice>
         </element>
+        <element label="Total Price" max_length="40" name="total_price" read_only="true" type="currency"/>
     </element>
 </database>

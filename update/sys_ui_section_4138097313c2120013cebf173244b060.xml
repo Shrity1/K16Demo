@@ -5,13 +5,13 @@
             <element>product_name</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-03-15 22:32:40</sys_created_on>
-            <sys_id>af42a17b13c2120013cebf173244b099</sys_id>
+            <sys_created_on>2016-03-17 19:30:57</sys_created_on>
+            <sys_id>09ebcf1813d2120013cebf173244b07c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_order_tracki_add_orders" sys_domain="global" view="Default view">4138097313c2120013cebf173244b060</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-03-15 22:32:40</sys_updated_on>
+            <sys_updated_on>2016-03-17 19:30:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -19,69 +19,41 @@
             <element>id</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-03-15 22:32:40</sys_created_on>
-            <sys_id>ef42a17b13c2120013cebf173244b099</sys_id>
+            <sys_created_on>2016-03-17 19:30:57</sys_created_on>
+            <sys_id>49ebcf1813d2120013cebf173244b07c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_order_tracki_add_orders" sys_domain="global" view="Default view">4138097313c2120013cebf173244b060</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-03-15 22:32:40</sys_updated_on>
+            <sys_updated_on>2016-03-17 19:30:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.begin_split</element>
+            <element>quantity</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-03-15 22:32:40</sys_created_on>
-            <sys_id>2342a17b13c2120013cebf173244b09a</sys_id>
+            <sys_created_on>2016-03-17 19:30:57</sys_created_on>
+            <sys_id>89ebcf1813d2120013cebf173244b07c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_order_tracki_add_orders" sys_domain="global" view="Default view">4138097313c2120013cebf173244b060</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-03-15 22:32:40</sys_updated_on>
-            <sys_user/>
-            <type>.begin_split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>status</element>
-            <position>3</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-03-15 22:32:40</sys_created_on>
-            <sys_id>6342a17b13c2120013cebf173244b09a</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_order_tracki_add_orders" sys_domain="global" view="Default view">4138097313c2120013cebf173244b060</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-03-15 22:32:40</sys_updated_on>
+            <sys_updated_on>2016-03-17 19:30:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.split</element>
-            <position>4</position>
+            <element>total_price</element>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-03-15 22:32:40</sys_created_on>
-            <sys_id>a342a17b13c2120013cebf173244b09a</sys_id>
+            <sys_created_on>2016-03-17 19:30:57</sys_created_on>
+            <sys_id>c9ebcf1813d2120013cebf173244b07c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_order_tracki_add_orders" sys_domain="global" view="Default view">4138097313c2120013cebf173244b060</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-03-15 22:32:40</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>complete_date</element>
-            <position>5</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-03-15 22:32:40</sys_created_on>
-            <sys_id>e342a17b13c2120013cebf173244b09a</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_order_tracki_add_orders" sys_domain="global" view="Default view">4138097313c2120013cebf173244b060</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-03-15 22:32:40</sys_updated_on>
+            <sys_updated_on>2016-03-17 19:30:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
