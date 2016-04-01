@@ -51,17 +51,17 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-03-15 22:26:48</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
-        <sys_id>10e0e53b13c2120013cebf173244b0f3</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>d324cd1113261200c7145aef3244b08a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>ORDER ID</sys_name>
         <sys_package display_value="Order Tracking System" source="x_snc_order_tracki">f0337cbb1382120013cebf173244b052</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Order Tracking System">f0337cbb1382120013cebf173244b052</sys_scope>
         <sys_update_name>sys_dictionary_x_snc_order_tracki_return_order_id</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-03-16 18:39:48</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2016-04-01 22:27:45</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

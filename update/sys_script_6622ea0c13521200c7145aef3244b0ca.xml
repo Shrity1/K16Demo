@@ -31,13 +31,27 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here
-	var target = new GlideRecord('x_snc_order_tracki_add_product');
-	target.orderBy('product_id');
-	target.query();
-	if (!target.next())
-		current.product_id.setValue(1);
-	else while (target.next()){} 
-	current.product_id.setValue(target.product_id + 1);
+	//var target = new GlideRecord('x_snc_order_tracki_add_product');
+	var MaxId = new GlideAggregate('x_snc_order_tracki_add_product');
+	
+	MaxId.addAggregate('MAX', 'product_id');
+	MaxId.query();
+			
+	if (!(MaxId.next()))
+	   	current.product_id.setValue(1);
+	else 
+		{
+			var  maxvalue = parseInt(MaxId.getAggregate('MAX','product_id')) + 1;
+			gs.addInfoMessage(maxvalue);
+	    current.product_id.setValue(maxvalue);
+		}
+		
+	//target.orderBy('product_id');
+	//target.query();
+	//if (!target.next())
+	//	current.product_id.setValue(1);
+	//else while (target.next()){} 
+	//current.product_id.setValue(target.product_id + 1);
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -46,7 +60,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6622ea0c13521200c7145aef3244b0ca</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>INSonProduct</sys_name>
         <sys_overrides/>
         <sys_package display_value="Order Tracking System" source="x_snc_order_tracki">f0337cbb1382120013cebf173244b052</sys_package>
@@ -55,7 +69,7 @@
         <sys_scope display_value="Order Tracking System">f0337cbb1382120013cebf173244b052</sys_scope>
         <sys_update_name>sys_script_6622ea0c13521200c7145aef3244b0ca</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-03-16 23:31:16</sys_updated_on>
+        <sys_updated_on>2016-04-01 23:17:43</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

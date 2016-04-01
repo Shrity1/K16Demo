@@ -4,7 +4,7 @@
         <sys_class_name>sys_security_acl_role</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-03-15 22:25:56</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>f4c0253b13c2120013cebf173244b00f</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_snc_order_tracki_return.x_snc_order_tracki_return_user</sys_name>
