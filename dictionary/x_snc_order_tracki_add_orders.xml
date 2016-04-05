@@ -3,7 +3,11 @@
     <element label="Orders" max_length="40" name="x_snc_order_tracki_add_orders" type="collection">
         <element label="Complete date" max_length="40" name="complete_date" type="glide_date"/>
         <element label="Order ID" max_length="40" name="id" primary="true" read_only="true" type="string"/>
-        <element label="Product Name" mandatory="true" max_length="200" name="product_name" reference="x_snc_order_tracki_add_product" table_reference="true" type="string"/>
+        <element choice="3" label="Product Name" mandatory="true" max_length="200" name="product_name" reference="x_snc_order_tracki_add_product" table_reference="true" type="string">
+            <choice>
+                <element label="iPadMini" value="iPadMini"/>
+            </choice>
+        </element>
         <element label="Quantity" mandatory="true" max_length="40" name="quantity" type="integer"/>
         <element label="Start Date" max_length="40" name="start_date" type="glide_date"/>
         <element choice="1" default="Processing" label="Status" max_length="20" name="status" type="string">
