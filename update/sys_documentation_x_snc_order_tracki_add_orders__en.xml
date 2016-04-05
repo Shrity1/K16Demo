@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
-    <sys_documentation element="" label="Add Orders" language="en" table="x_snc_order_tracki_add_orders">
+    <sys_documentation element="" label="Orders" language="en" table="x_snc_order_tracki_add_orders">
         <sys_documentation action="INSERT_OR_UPDATE">
             <element/>
             <help/>
             <hint/>
-            <label>Add Orders</label>
+            <label>Orders</label>
             <language>en</language>
             <name>x_snc_order_tracki_add_orders</name>
-            <plural>Add Orders</plural>
+            <plural>Orders</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2016-03-15 19:14:30</sys_created_on>
-            <sys_customer_update>false</sys_customer_update>
+            <sys_customer_update>true</sys_customer_update>
             <sys_id>6cf4787f1382120013cebf173244b044</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_name>Add Orders</sys_name>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Orders</sys_name>
             <sys_package display_value="Order Tracking System" source="x_snc_order_tracki">f0337cbb1382120013cebf173244b052</sys_package>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Order Tracking System">f0337cbb1382120013cebf173244b052</sys_scope>
             <sys_update_name>sys_documentation_x_snc_order_tracki_add_orders__en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-03-15 19:14:30</sys_updated_on>
+            <sys_updated_on>2016-04-04 17:11:56</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

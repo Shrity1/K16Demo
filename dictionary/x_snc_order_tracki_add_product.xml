@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element label="Add Product" max_length="40" name="x_snc_order_tracki_add_product" type="collection">
+    <element label="Product" max_length="40" name="x_snc_order_tracki_add_product" type="collection">
         <element label="Name" max_length="200" name="name" type="string"/>
         <element label="Price" mandatory="true" max_length="40" name="price" type="currency"/>
         <element label="Product Description" max_length="200" name="product_description" type="string"/>

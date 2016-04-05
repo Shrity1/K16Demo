@@ -28,39 +28,46 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+        <script><![CDATA[function getOrderID() {
+	var orderno = 1;
+	var MaxId = new GlideAggregate('x_snc_order_tracki_add_orders');
+	MaxId.addAggregate('COUNT');
+	MaxId.query();
+			
+	if (MaxId.next())
+	      orderno = MaxId.getAggregate('COUNT');
+    orderno = orderno * 17;
+    orderno = orderno + gs.generateGUID();
+    orderno = orderno.substring(0,15);
+    return orderno;
+	
+}
+
+(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here
 	
 	var product = new GlideRecord('x_snc_order_tracki_add_product');
-	var order = new GlideRecord('x_snc_order_tracki_add_orders');
-	var MaxId = new GlideAggregate('x_snc_order_tracki_add_orders');
+	var CurrentDate = new GlideDate();
+	var TotalPrice = 0;
 
-	product.addQuery('name', current.product_name.getDisplayValue());
+	product.get('name', current.product_name.getDisplayValue());
+	   
 	
-	product.query();
-   
-	
-	if (product.getRowCount() == 0)
+	if (product.isValidRecord())
 		{ 
-			gs.addInfoMessage('No such product exists');
-			current.setAbortAction(true);
+			// Generate hash value
+			current.id.setValue(getOrderID());
+	        current.status.setValue("Processing");
+			current.start_date.setValue(CurrentDate.getValue());
+			TotalPrice = product.price * current.quantity;
+			current.total_price.setValue(TotalPrice);
 		 
 		}
 	else
 		{
-			
-	        order.orderBy('ID');
-	        order.query();
-			MaxId.addAggregate('MAX', 'id');
-			MaxId.query();
-			
-	        if (MaxId.next())
-	         	current.id.setValue(1);
-	        else 
-	            current.id.setValue(MaxId.getAggregate('MAX') + 1);
-			current.return_status.setValue('No return');
-			current.total_price.setValue(product.getElement(price) * current.quantity.getSessionValue());
+			gs.addInfoMessage('No such product exists');
+			current.setAbortAction(true);
 		}
 	
 
@@ -68,11 +75,11 @@
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-03-16 23:33:01</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c3897ac013921200c7145aef3244b0cb</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>INSONORDER</sys_name>
         <sys_overrides/>
         <sys_package display_value="Order Tracking System" source="x_snc_order_tracki">f0337cbb1382120013cebf173244b052</sys_package>
@@ -81,7 +88,7 @@
         <sys_scope display_value="Order Tracking System">f0337cbb1382120013cebf173244b052</sys_scope>
         <sys_update_name>sys_script_c3897ac013921200c7145aef3244b0cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-03-18 15:38:36</sys_updated_on>
+        <sys_updated_on>2016-04-05 17:36:02</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
