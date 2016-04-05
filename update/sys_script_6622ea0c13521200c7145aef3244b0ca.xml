@@ -34,16 +34,15 @@
 	//var target = new GlideRecord('x_snc_order_tracki_add_product');
 	var MaxId = new GlideAggregate('x_snc_order_tracki_add_product');
 	
-	MaxId.addAggregate('MAX', 'product_id');
+	MaxId.addAggregate('COUNT');
 	MaxId.query();
 			
 	if (!(MaxId.next()))
 	   	current.product_id.setValue(1);
 	else 
 		{
-			var  maxvalue = parseInt(MaxId.getAggregate('MAX','product_id')) + 1;
-			gs.addInfoMessage(maxvalue);
-	    current.product_id.setValue(maxvalue);
+			var  maxvalue = parseInt(MaxId.getAggregate('COUNT')) + 1;
+			current.product_id.setValue(maxvalue);
 		}
 		
 	//target.orderBy('product_id');
@@ -60,7 +59,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6622ea0c13521200c7145aef3244b0ca</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>INSonProduct</sys_name>
         <sys_overrides/>
         <sys_package display_value="Order Tracking System" source="x_snc_order_tracki">f0337cbb1382120013cebf173244b052</sys_package>
@@ -69,7 +68,7 @@
         <sys_scope display_value="Order Tracking System">f0337cbb1382120013cebf173244b052</sys_scope>
         <sys_update_name>sys_script_6622ea0c13521200c7145aef3244b0ca</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-04-01 23:17:43</sys_updated_on>
+        <sys_updated_on>2016-04-05 18:15:54</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
